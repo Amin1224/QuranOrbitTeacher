@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">QuranOrbitTeacher</string>
+    <string name="already_account">Already account</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="create_new_account">Create new account</string>
+    <string name="forget_password">Forget password</string>
+    <string name="name">Name</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="phone_number">Mobile Number</string>
+    <string name="logout">Log Out</string>
+    <string name="quran_orbit">Quran Orbit</string>
+    <string name="online_academy">Online Academy</string>
+    <string name="please_wait">"Please wait, getting started "</string>
+    <string name="create_your_quran">Create your Quran Academy \n student account</string>
+    <string name="please_fill_the">Please fill the form below to register.</string>
+    <string name="student_id">Student ID:</string>
+    <string name="creation_date">Creation Date:</string>
+</resources>

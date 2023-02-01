@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "740110070395",
+    "firebase_url": "https://quran-orbit-2c763-default-rtdb.firebaseio.com",
+    "project_id": "quran-orbit-2c763",
+    "storage_bucket": "quran-orbit-2c763.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740110070395:android:0f8fda597e5a5c09f6a8de",
+        "android_client_info": {
+          "package_name": "com.example.quranorbit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740110070395-msv20u4hhmu487j3b6ed9ci3k64pke6s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-mvugK3xIR_KS6ajHYGeMge3oZMu2XOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740110070395-msv20u4hhmu487j3b6ed9ci3k64pke6s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740110070395:android:702d88ddb0edf5b5f6a8de",
+        "android_client_info": {
+          "package_name": "com.example.quranorbitadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740110070395-msv20u4hhmu487j3b6ed9ci3k64pke6s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-mvugK3xIR_KS6ajHYGeMge3oZMu2XOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740110070395-msv20u4hhmu487j3b6ed9ci3k64pke6s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740110070395:android:b443f5d9b906f970f6a8de",
+        "android_client_info": {
+          "package_name": "com.example.quranorbitteacher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740110070395-msv20u4hhmu487j3b6ed9ci3k64pke6s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-mvugK3xIR_KS6ajHYGeMge3oZMu2XOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740110070395-msv20u4hhmu487j3b6ed9ci3k64pke6s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
