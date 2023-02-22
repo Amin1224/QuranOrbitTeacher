@@ -6,46 +6,58 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.profile.Profile">
 
-    <ImageView
-        android:id="@+id/back_to"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="6dp"
-        android:layout_marginTop="2dp"
-        android:padding="12dp"
-        android:src="@drawable/arrow_back"
+        android:id="@+id/top_parent"
+        android:background="@color/primary_color"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:text="create_post"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/back_to"
-        app:layout_constraintStart_toEndOf="@+id/back_to"
-        app:layout_constraintTop_toTopOf="@+id/back_to" />
+        <ImageView
+            android:id="@+id/back_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:padding="16dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_left"
+            />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/profile"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
 
     <ImageView
         android:id="@+id/profile_image"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="20dp"
         android:src="@drawable/img"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/top_parent" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:padding="8dp"
         android:text="@string/name"
         android:textAllCaps="false"
         android:textColor="@color/black"
@@ -56,55 +68,85 @@
 
     <TextView
         android:id="@+id/profile_name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:paddingVertical="8dp"
+        android:layout_marginStart="3dp"
         android:text="Arif khan"
         android:textAllCaps="false"
-        android:padding="15dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:fontFamily="@font/montserrat_regular"
+        app:layout_constraintBottom_toBottomOf="@+id/textView9"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toTopOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@color/white"
+        android:fontFamily="@font/montserrat_regular"
+        android:paddingVertical="8dp"
+        android:text="Arif khan"
+        android:layout_marginStart="2dp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView91"
+        app:layout_constraintStart_toEndOf="@+id/textView91"
+        app:layout_constraintTop_toTopOf="@+id/textView91" />
+
+    <TextView
+        android:id="@+id/textView91"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_regular"
+        android:padding="8dp"
+        android:text="@string/last_name"
+        android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        android:layout_marginStart="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_name"
+        app:layout_constraintStart_toEndOf="@+id/profile_name"
+        app:layout_constraintTop_toTopOf="@+id/profile_name" />
+
 
 
     <TextView
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="13dp"
+        android:padding="8dp"
         android:text="@string/email"
         android:textAllCaps="false"
+        android:fontFamily="@font/montserrat_regular"
+        android:layout_marginTop="12dp"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/phone_number"
         app:layout_constraintTop_toBottomOf="@+id/profile_name" />
+
 
     <TextView
         android:id="@+id/profile_email"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:paddingVertical="8dp"
+        android:layout_marginStart="8dp"
         android:text="abc123@gmail.com"
         android:textAllCaps="false"
-        android:padding="15dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:background="@color/white"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
-
+        android:fontFamily="@font/montserrat_regular"
+        app:layout_constraintBottom_toBottomOf="@+id/email"
+        app:layout_constraintStart_toEndOf="@+id/email"
+        app:layout_constraintTop_toTopOf="@+id/email" />
 
     <TextView
         android:id="@+id/phone_number"
@@ -112,6 +154,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
         android:layout_marginTop="13dp"
+        android:padding="8dp"
+        android:fontFamily="@font/montserrat_regular"
         android:text="@string/phone_number"
         android:textAllCaps="false"
         android:textColor="@color/black"
@@ -122,19 +166,48 @@
 
     <TextView
         android:id="@+id/profile_mobile_no"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="03442225554"
-        android:textAllCaps="false"
-        android:padding="15dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
         android:background="@color/white"
+        android:paddingVertical="8dp"
+        android:text="03442225554"
+        android:layout_marginStart="6dp"
+        android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="16sp"
+        android:fontFamily="@font/montserrat_regular"
+        app:layout_constraintBottom_toBottomOf="@+id/phone_number"
+        app:layout_constraintStart_toEndOf="@+id/phone_number"
+        app:layout_constraintTop_toTopOf="@+id/phone_number" />
+
+    <TextView
+        android:id="@+id/address_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_regular"
+        android:padding="8dp"
+        android:text="@string/name"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/address"
+        app:layout_constraintStart_toEndOf="@+id/address"
+        app:layout_constraintTop_toTopOf="@+id/address" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        android:fontFamily="@font/montserrat_regular"
+        android:paddingVertical="8dp"
+        android:text="@string/address"
+        android:textAllCaps="false"
+        android:padding="8dp"
+        android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/phone_number"
         app:layout_constraintTop_toBottomOf="@+id/phone_number" />
 
@@ -142,18 +215,20 @@
         android:id="@+id/log_out"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:backgroundTint="@color/black"
-        android:padding="15dp"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/primary_color"
+        android:fontFamily="@font/montserrat_regular"
+        android:padding="15dp"
         android:text="@string/logout"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"
+        android:visibility="visible"
         app:cornerRadius="7dp"
         app:elevation="6dp"
-        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

@@ -1,22 +1,27 @@
 package com.example.quranorbitteacher.fragments.sign_in
 
+import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.navigation.fragment.findNavController
 import com.example.quranorbitteacher.R
-import com.example.quranorbitteacher.activities.AccontNotAproved
-import com.example.quranorbitteacher.activities.Home
+import com.example.quranorbitteacher.activities.CsrFloorManager
+import com.example.quranorbitteacher.activities.MainActivity
 import com.example.quranorbitteacher.common.Common
 import com.example.quranorbitteacher.databinding.FragmentSignInBinding
 import com.example.quranorbitteacher.helpher.Helpher
-import com.example.quranorbitteacher.model.User
+import com.example.quranorbitteacher.model.FullRegistration
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -43,6 +48,7 @@ class Sign_In : Fragment() {
     ): View {
         binding = FragmentSignInBinding.inflate(layoutInflater, container, false)
 
+
         return binding.root
     }
 
@@ -53,12 +59,16 @@ class Sign_In : Fragment() {
     }
 
     private fun onClick() {
-        binding.login.setOnClickListener {
+
+        binding.email.isSingleLine = true
+        binding.password.isSingleLine = true
+        binding.signIn.setOnClickListener {
             checkInput()
         }
         binding.signUp.setOnClickListener {
-            findNavController().navigate(R.id.action_sign_In_to_sign_Up2)
+            findNavController().navigate(R.id.action_sign_In3_to_registration2)
         }
+
 
     }
 
@@ -70,8 +80,8 @@ class Sign_In : Fragment() {
             binding.password.error = "Enter valid password"
             binding.password.requestFocus()
         } else {
-            binding.login.visibility=View.INVISIBLE
-            binding.progressBar.visibility=View.VISIBLE
+            binding.signIn.visibility = View.INVISIBLE
+            binding.progressBar.visibility = View.VISIBLE
             signIn(binding.email.text.toString().trim(), binding.password.text.toString().trim())
         }
     }
@@ -80,52 +90,67 @@ class Sign_In : Fragment() {
         mAuth.signInWithEmailAndPassword(email, passWord)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    task.getResult().user?.let { updateUI(it.uid) }
+                    task.getResult().user?.let {
+                        updateUI(it.uid)
+                        Log.d("itUID", "signIn: jjjjjjjjjjj")
+                        Toast.makeText(requireContext(), "succefully", Toast.LENGTH_SHORT).show()
+                    }
                 } else {
                     Toast.makeText(
                         requireActivity(), "Authentication failed.",
                         Toast.LENGTH_SHORT
                     ).show()
-                    binding.login.visibility=View.VISIBLE
-                    binding.progressBar.visibility=View.GONE
+                    binding.signIn.visibility = View.VISIBLE
+                    binding.progressBar.visibility = View.GONE
                 }
             }
     }
 
-    private fun updateUI(user: String) {
-        FirebaseDatabase.getInstance().getReference("TEACHER")
-            .child(user)
+    private fun updateUI(uid: String) {
+        FirebaseDatabase.getInstance().getReference("CSR")
+            .child(uid)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
+                    Log.i("kTAG", "itemSnap: ${snapshot}")
 
+                    Toast.makeText(requireContext(), "store data", Toast.LENGTH_SHORT).show()
                     if (snapshot.exists()) {
-                        for (itemSnap in snapshot.children) {
-                        val currentUser = itemSnap.getValue(User::class.java)
-                        if (currentUser != null) {
-                            Common.CURRENT_USER = currentUser
-                            navigateTo("1")
-                        } else {
-                            Toast.makeText(requireContext(), "failed", Toast.LENGTH_SHORT).show()
-                            binding.login.visibility=View.VISIBLE
-                            binding.progressBar.visibility=View.GONE
-                        }
-                        }
+//                        for (itemSnap in snapshot.children) {
+                            Log.i("kTAG", "current: $snapshot")
 
-                    } else {
+                            val currentUser = snapshot.getValue(FullRegistration::class.java)
+                            if (currentUser != null) {
+                                Toast.makeText(requireContext(), "currentUser", Toast.LENGTH_SHORT)
+                                    .show()
+
+                                Log.i("kTAG", "currentuser: $currentUser")
+                                Common.CURRENT_USERS = currentUser
+                                navigateTo(Common.CURRENT_USERS.accountType!!)
+                            }
+                            else {
+                                Toast.makeText(requireContext(), "failed", Toast.LENGTH_SHORT)
+                                    .show()
+                                binding.signIn.visibility = View.VISIBLE
+                                binding.progressBar.visibility = View.GONE
+                            }
+//                        }
+
+                    }
+                    else {
                         Toast.makeText(
                             requireContext(),
                             "No Account found against these details",
                             Toast.LENGTH_SHORT
                         ).show()
-                        binding.login.visibility=View.VISIBLE
-                        binding.progressBar.visibility=View.GONE
+                        binding.signIn.visibility = View.VISIBLE
+                        binding.progressBar.visibility = View.GONE
                     }
 
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    binding.login.visibility=View.VISIBLE
-                    binding.progressBar.visibility=View.GONE
+                    binding.signIn.visibility = View.VISIBLE
+                    binding.progressBar.visibility = View.GONE
                     Toast.makeText(requireContext(), "$error", Toast.LENGTH_SHORT).show()
                 }
 
@@ -133,12 +158,13 @@ class Sign_In : Fragment() {
     }
 
     private fun navigateTo(user: String) {
-        if (user == "1" && Common.CURRENT_USER.notActive==true ) {
-            startActivity(Intent(requireContext(),Home::class.java))
-        }else{
-            startActivity(Intent(requireContext(),AccontNotAproved::class.java))
+        if (user == "Director Sale"  ) {
+            startActivity(Intent(requireContext(), MainActivity::class.java))
+        }else {
+            startActivity(Intent(requireContext(),CsrFloorManager::class.java))
         }
         requireActivity().finish()
+
 
     }
 }

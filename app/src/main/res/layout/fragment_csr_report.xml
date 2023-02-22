@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.csr_report.CsrReport">
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:text="@string/date"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="12dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/date_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:text="@string/date"
+        android:layout_marginTop="6dp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/primary_color"
+        app:layout_constraintTop_toBottomOf="@+id/date_show"
+        tools:layout_editor_absoluteX="10dp" />
+
+    <TextView
+        android:id="@+id/dail_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/no_daily_call"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/dail_call_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/no_daily_call"
+        android:paddingVertical="5dp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/dail_call"
+        app:layout_constraintTop_toBottomOf="@+id/dail_call" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="@color/primary_color"
+        app:layout_constraintEnd_toEndOf="@+id/dail_call_quantity"
+        app:layout_constraintStart_toStartOf="@+id/dail_call_quantity"
+        app:layout_constraintTop_toBottomOf="@+id/dail_call_quantity" />
+
+    <TextView
+        android:id="@+id/attended_call"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content"
+        android:text="@string/no_attended_call"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <TextView
+        android:id="@+id/attende_call_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_attended"
+        android:textAllCaps="false"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/attended_call"
+        app:layout_constraintStart_toStartOf="@+id/attended_call"
+        app:layout_constraintTop_toBottomOf="@+id/attended_call" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="@color/primary_color"
+        app:layout_constraintEnd_toEndOf="@+id/attende_call_quantity"
+        app:layout_constraintStart_toStartOf="@+id/attende_call_quantity"
+        app:layout_constraintTop_toBottomOf="@+id/attende_call_quantity" />
+
+    <TextView
+        android:id="@+id/dropped_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/drop_call"
+        android:textAllCaps="false"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toBottomOf="@+id/attende_call_quantity" />
+
+    <TextView
+        android:id="@+id/dropped_call_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_drop"
+        android:textAllCaps="false"
+        android:layout_marginTop="6dp"
+        android:paddingVertical="5dp"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/dropped_call"
+        app:layout_constraintStart_toStartOf="@+id/dropped_call"
+        app:layout_constraintTop_toBottomOf="@+id/dropped_call" />
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="@color/primary_color"
+        app:layout_constraintEnd_toEndOf="@+id/dropped_call_quantity"
+        app:layout_constraintStart_toStartOf="@+id/dropped_call_quantity"
+        app:layout_constraintTop_toBottomOf="@+id/dropped_call_quantity" />
+
+    <TextView
+        android:id="@+id/shift_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/shift_call"
+        android:textAllCaps="false"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+    <TextView
+        android:id="@+id/shift_call_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_drop"
+        android:textAllCaps="false"
+        android:paddingVertical="5dp"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/shift_call"
+        app:layout_constraintStart_toStartOf="@+id/shift_call"
+        app:layout_constraintTop_toBottomOf="@+id/shift_call" />
+
+    <View
+        android:id="@+id/view61"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="@color/primary_color"
+        app:layout_constraintEnd_toEndOf="@+id/shift_call_quantity"
+        app:layout_constraintStart_toStartOf="@+id/shift_call_quantity"
+        app:layout_constraintTop_toBottomOf="@+id/shift_call_quantity" />
+
+    <TextView
+        android:id="@+id/shift_trial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/trial_booked"
+        android:textAllCaps="false"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/view61"
+        app:layout_constraintTop_toBottomOf="@+id/view61" />
+
+    <TextView
+        android:id="@+id/shift_trial_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_drop"
+        android:textAllCaps="false"
+        android:paddingVertical="5dp"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/shift_trial"
+        app:layout_constraintStart_toStartOf="@+id/shift_trial"
+        app:layout_constraintTop_toBottomOf="@+id/shift_trial" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="@color/primary_color"
+        app:layout_constraintEnd_toEndOf="@+id/shift_trial_quantity"
+        app:layout_constraintStart_toStartOf="@+id/shift_trial_quantity"
+        app:layout_constraintTop_toBottomOf="@+id/shift_trial_quantity" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bottom"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/send_report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cornerRadius="10dp"
+            android:padding="16dp"
+            android:layout_marginTop="9dp"
+            android:backgroundTint="@color/white"
+            android:textAllCaps="false"
+            android:text="@string/send_report"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/send_call_report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send_call_report"
+            android:textAllCaps="false"
+            android:textColor="@color/light_color"
+            android:textSize="16sp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="9dp"
+            app:layout_constraintStart_toStartOf="@+id/view5"
+            app:layout_constraintTop_toBottomOf="@+id/view5" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

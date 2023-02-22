@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registration"
+    app:startDestination="@id/sign_In3">
+
+    <fragment
+        android:id="@+id/sign_In3"
+        android:name="com.example.quranorbitteacher.fragments.sign_in.Sign_In"
+        android:label="fragment_sign__in"
+        tools:layout="@layout/fragment_sign__in" >
+        <action
+            android:id="@+id/action_sign_In3_to_registration2"
+            app:destination="@id/registration2" />
+    </fragment>
+    <fragment
+        android:id="@+id/registration2"
+        android:name="com.example.quranorbitteacher.fragments.registration_csr.Registration"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registration2_to_scoundForm2"
+            app:destination="@id/scoundForm2" />
+        <action
+            android:id="@+id/action_registration2_to_sign_In3"
+            app:destination="@id/sign_In3" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoundForm2"
+        android:name="com.example.quranorbitteacher.fragments.registration_csr.ScoundForm"
+        android:label="fragment_scound_form"
+        tools:layout="@layout/fragment_scound_form" />
+</navigation>

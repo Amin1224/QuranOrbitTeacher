@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/csr_navigation"
+    app:startDestination="@id/CSR_Daily_Activity">
+
+    <fragment
+        android:id="@+id/CSR"
+        android:name="com.example.quranorbitteacher.fragments.csr.CSR"
+        android:label="fragment_c_s_r"
+        tools:layout="@layout/fragment_c_s_r" >
+        <action
+            android:id="@+id/action_CSR_to_CSR_Daily_Activity"
+            app:destination="@id/CSR_Daily_Activity" />
+        <action
+            android:id="@+id/action_CSR_to_form1"
+            app:destination="@id/form1" />
+        <action
+            android:id="@+id/action_CSR_to_schedule_Call"
+            app:destination="@id/schedule_Call" />
+        <action
+            android:id="@+id/action_CSR_to_call_Counter"
+            app:destination="@id/call_Counter" />
+        <action
+            android:id="@+id/action_CSR_to_profile2"
+            app:destination="@id/profile2" />
+        <action
+            android:id="@+id/action_CSR_to_profile22"
+            app:destination="@id/profile2" />
+    </fragment>
+    <fragment
+        android:id="@+id/CSR_Daily_Activity"
+        android:name="com.example.quranorbitteacher.fragments.csr_daily_activity.CSR_Daily_Activity"
+        android:label="CSR_Daily_Activity" >
+        <action
+            android:id="@+id/action_CSR_Daily_Activity_to_CSR"
+            app:destination="@id/CSR" />
+        <action
+            android:id="@+id/action_CSR_Daily_Activity_to_csrReport"
+            app:destination="@id/csrReport" />
+        <action
+            android:id="@+id/action_CSR_Daily_Activity_to_pending_Trial"
+            app:destination="@id/pending_Trial" />
+        <action
+            android:id="@+id/action_CSR_Daily_Activity_self"
+            app:destination="@id/CSR_Daily_Activity" />
+        <action
+            android:id="@+id/action_CSR_Daily_Activity_to_pending_Schedule_Call"
+            app:destination="@id/pending_Schedule_Call" />
+        <action
+            android:id="@+id/action_CSR_Daily_Activity_to_profile2"
+            app:destination="@id/profile2" />
+    </fragment>
+    <fragment
+        android:id="@+id/csrReport"
+        android:name="com.example.quranorbitteacher.fragments.csr_report.CsrReport"
+        android:label="fragment_csr_report"
+        tools:layout="@layout/fragment_csr_report" >
+        <action
+            android:id="@+id/action_csrReport_to_CSR_Daily_Activity"
+            app:destination="@id/CSR_Daily_Activity" />
+        <action
+            android:id="@+id/action_csrReport_to_call_Counter"
+            app:destination="@id/call_Counter" />
+    </fragment>
+    <fragment
+        android:id="@+id/form1"
+        android:name="com.example.quranorbitteacher.fragments.student_registration.form1.Form1"
+        android:label="fragment_form1"
+        tools:layout="@layout/fragment_form1" >
+        <action
+            android:id="@+id/action_form1_to_CSR"
+            app:destination="@id/CSR" />
+        <action
+            android:id="@+id/action_form1_to_form2"
+            app:destination="@id/form2" />
+        <action
+            android:id="@+id/action_form1_to_profile2"
+            app:destination="@id/profile2" />
+    </fragment>
+    <fragment
+        android:id="@+id/form2"
+        android:name="com.example.quranorbitteacher.fragments.student_registration.form1.form2.Form2"
+        android:label="fragment_form2"
+        tools:layout="@layout/fragment_form2" >
+        <action
+            android:id="@+id/action_form2_to_form3"
+            app:destination="@id/form3" />
+        <action
+            android:id="@+id/action_form2_to_form1"
+            app:destination="@id/form1" />
+        <action
+            android:id="@+id/action_form2_to_profile2"
+            app:destination="@id/profile2" />
+    </fragment>
+    <fragment
+        android:id="@+id/form3"
+        android:name="com.example.quranorbitteacher.fragments.student_registration.form1.form3.Form3"
+        android:label="fragment_form3"
+        tools:layout="@layout/fragment_form3" >
+        <action
+            android:id="@+id/action_form3_to_form2"
+            app:destination="@id/form2" />
+        <action
+            android:id="@+id/action_form3_to_profile2"
+            app:destination="@id/profile2" />
+        <action
+            android:id="@+id/action_form3_to_CSR"
+            app:destination="@id/CSR" />
+    </fragment>
+    <fragment
+        android:id="@+id/pending_Trial"
+        android:name="com.example.quranorbitteacher.fragments.pending_trial.Pending_Trial"
+        android:label="fragment_pending__trial"
+        tools:layout="@layout/fragment_pending__trial" />
+    <fragment
+        android:id="@+id/schedule_Call"
+        android:name="com.example.quranorbitteacher.fragments.schedule_call.Schedule_Call"
+        android:label="fragment_schedule__call"
+        tools:layout="@layout/fragment_schedule__call" />
+    <fragment
+        android:id="@+id/pending_Schedule_Call"
+        android:name="com.example.quranorbitteacher.fragments.pending_schedule_call.Pending_Schedule_Call"
+        android:label="fragment_pending__schedule__call"
+        tools:layout="@layout/fragment_pending__schedule__call" >
+        <action
+            android:id="@+id/action_pending_Schedule_Call_to_CSR_Daily_Activity"
+            app:destination="@id/CSR_Daily_Activity" />
+    </fragment>
+    <fragment
+        android:id="@+id/call_Counter"
+        android:name="com.example.quranorbitteacher.fragments.call_counter.CallCounter"
+        android:label="fragment_call__counter"
+        tools:layout="@layout/fragment_call_counter" >
+        <action
+            android:id="@+id/action_call_Counter_to_CSR"
+            app:destination="@id/CSR" />
+        <action
+            android:id="@+id/action_call_Counter_to_form1"
+            app:destination="@id/form1" />
+        <action
+            android:id="@+id/action_call_Counter_to_schedule_Call"
+            app:destination="@id/schedule_Call" />
+        <action
+            android:id="@+id/action_call_Counter_to_csrReport"
+            app:destination="@id/csrReport" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile2"
+        android:name="com.example.quranorbitteacher.fragments.profile.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile2_to_CSR_Daily_Activity"
+            app:destination="@id/CSR_Daily_Activity" />
+        <action
+            android:id="@+id/action_profile2_to_CSR"
+            app:destination="@id/CSR" />
+        <action
+            android:id="@+id/action_profile2_to_form3"
+            app:destination="@id/form3" />
+        <action
+            android:id="@+id/action_profile2_to_form1"
+            app:destination="@id/form1" />
+        <action
+            android:id="@+id/action_profile2_to_form2"
+            app:destination="@id/form2" />
+    </fragment>
+</navigation>

@@ -18,6 +18,7 @@ import com.example.quranorbitteacher.activities.Home
 import com.example.quranorbitteacher.common.Common
 import com.example.quranorbitteacher.databinding.FragmentSignUpBinding
 import com.example.quranorbitteacher.helpher.Helpher
+import com.example.quranorbitteacher.model.FullRegistration
 import com.example.quranorbitteacher.model.User
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -25,7 +26,6 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.properties.Delegates
 
 class Sign_Up : Fragment() {
 
@@ -115,11 +115,11 @@ class Sign_Up : Fragment() {
     private fun uploadUserData(user: FirebaseUser) {
         val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
         val currentDate = sdf.format(Date())
-        val userModel= User(
+        val userModel= FullRegistration(
             binding.userName.text.toString().trim(),
             binding.email.text.toString().trim(),
             binding.password.text.toString().trim(),
-            accountAprove,
+//            accountAprove,
             binding.phoneNumber.text.toString().trim(),
             currentDate,
             user.uid,
@@ -131,7 +131,7 @@ class Sign_Up : Fragment() {
             .addOnCompleteListener{
                 if (it.isSuccessful){
                     Log.d("userInfo", "uploadUserData: $userModel")
-                    Common.CURRENT_USER=userModel
+                    Common.CURRENT_USERS=userModel
                     navigateTo("1")
                 }else{
                     binding.progressBar.visibility=View.GONE

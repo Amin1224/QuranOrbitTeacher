@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/floor_manager_navigation"
+    app:startDestination="@id/floorManagerDashboard">
+
+    <fragment
+        android:id="@+id/floorManagerDashboard"
+        android:name="com.example.quranorbitteacher.fragments.floor_manager.dashboard.FloorManagerDashboard"
+        android:label="FloorManagerDashboard" >
+        <action
+            android:id="@+id/action_floorManagerDashboard_to_recievedCall"
+            app:destination="@id/recievedCall" />
+        <action
+            android:id="@+id/action_floorManagerDashboard_to_csrReportInfo"
+            app:destination="@id/csrReportInfo" />
+        <action
+            android:id="@+id/action_floorManagerDashboard_to_profile3"
+            app:destination="@id/profile3" />
+    </fragment>
+    <fragment
+        android:id="@+id/recievedCall"
+        android:name="com.example.quranorbitteacher.fragments.floor_manager.received_call.RecievedCall"
+        android:label="fragment_recieved_call"
+        tools:layout="@layout/fragment_recieved_call" >
+        <action
+            android:id="@+id/action_recievedCall_to_floorManagerDashboard"
+            app:destination="@id/floorManagerDashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/csrReportInfo"
+        android:name="com.example.quranorbitteacher.fragments.floor_manager.csr_report.CsrReportInfo"
+        android:label="fragment_csr_report_info"
+        tools:layout="@layout/fragment_csr_report_info" >
+        <action
+            android:id="@+id/action_csrReportInfo_to_floorManagerDashboard"
+            app:destination="@id/floorManagerDashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile3"
+        android:name="com.example.quranorbitteacher.fragments.profile.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile3_to_floorManagerDashboard"
+            app:destination="@id/floorManagerDashboard" />
+    </fragment>
+</navigation>
